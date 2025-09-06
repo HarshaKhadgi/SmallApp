@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: 17harsha08/nodejs-small-image1
+        image: 17harsha08/nodejs-small-image
         ports:
         - containerPort: 4000
