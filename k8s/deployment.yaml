@@ -1,7 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-app
+  name: nodejs-deployment
+  labels:
+    app: nodejs-app
+  namespace: mern-app
 spec:
   replicas: 2
   selector:
@@ -14,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nodejs-app
-        image: <AWWS_ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/nodejs-app:latest
+        image: nodejs-small-image
         ports:
         - containerPort: 4000
