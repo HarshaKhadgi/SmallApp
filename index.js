@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello I am using AWS EKS");
 });
 
+app.get("/hello", (req, res) => {
+  res.status(200).send("Hello I am using AWS EKS hstysyhfjkvg");
+});
+
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
