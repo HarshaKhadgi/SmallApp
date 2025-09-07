@@ -4,10 +4,12 @@ metadata:
   name: nodejs-service
   namespace: mern-app
 spec:
-  type: ClusterIP
+  # type: ClusterIP
+  type: NodePort
   selector:
     app: nodejs-app
   ports:
-  - protocol: TCP
-    port: 80
+  # - protocol: TCP
+  - port: 4000
     targetPort: 4000
+    nodePort: 30080
