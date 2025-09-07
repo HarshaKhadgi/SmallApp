@@ -14,27 +14,27 @@ spec:
     metadata:
       labels:
         app: nodejs-app
-      annotations:
-        # Annotation-based scraping (works with many Prometheus charts)
-        prometheus.io/scrape: "true"
-        prometheus.io/path: "/metrics"
-        prometheus.io/port: "3000"
+      # annotations:
+      #   # Annotation-based scraping (works with many Prometheus charts)
+      #   prometheus.io/scrape: "true"
+      #   prometheus.io/path: "/metrics"
+      #   prometheus.io/port: "3000"
     spec:
       containers:
       - name: nodejs-app
         image: 17harsha08/nodejs-small-image
         ports:
         - containerPort: 4000
-          name: metrics
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 3000
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 3000
-          initialDelaySeconds: 15
-          periodSeconds: 20
+        #   name: metrics
+        # readinessProbe:
+        #   httpGet:
+        #     path: /healthz
+        #     port: 3000
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 10
+        # livenessProbe:
+        #   httpGet:
+        #     path: /healthz
+        #     port: 3000
+        #   initialDelaySeconds: 15
+        #   periodSeconds: 20
